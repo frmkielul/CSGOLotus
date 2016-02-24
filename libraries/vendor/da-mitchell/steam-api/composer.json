@@ -1,0 +1,33 @@
+{
+    "name": "da-mitchell/steam-api",
+    "type": "library",
+    "description": "PHP wrapper for the steam web API",
+    "keywords": ["steam", "dota", "api", "csgo", "counter strike"],
+    "homepage": "https://github.com/DaMitchell/steam-api-php",
+    "license": "BSD-2-Clause",
+    "authors": [
+        {
+            "name": "Dan Mitchell",
+            "email": "danmitchellster@gmail.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.0",
+        "guzzlehttp/guzzle": "~6.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "~4.6",
+        "mockery/mockery": "~0.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "Steam\\": "src/Steam"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "2.0.x-dev"
+        }
+    }
+}
