@@ -29,7 +29,4 @@ $DB_HOST = "localhost";
 $db = new PDO("mysql:dbname=$DB_NAME;host=$DB_HOST", $DB_USER, $DB_PASS);
 
 $client = new EClient(new Version1X('http://localhost:8080'));
-//$client->initialize();
-//$client->emit('broadcast', ['foo' => 'bar']);
-//$client->close();
 ?>
