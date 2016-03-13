@@ -9,10 +9,10 @@ function isDuplicate($db) {
 		return false; // no duplicate
 	}
 }
-function register_firsttime($db) {
+function register_firsttime($db, $sid) {
 	if (!isDuplicate($db)) {
 		$stmt = $db->prepare("INSERT INTO users(STEAMID64, date_registered) VALUES(?, NOW())");
-		$stmt->execute(array(getSteamID64()));
+		$stmt->execute(array($sid));
 	} else {
 		echo "Something bad happened!<br />";
 	}
@@ -120,6 +120,7 @@ function createNetworkData($selected_items, $db) {
 /**
  * @param array $selected
  * This is now handled by the Steambot so don't call it.
+ * Still keeping it here cause we might need it
  */
 function pricecheck($selected) {
 	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730
