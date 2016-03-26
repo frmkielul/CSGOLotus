@@ -1,8 +1,8 @@
 <?php
 require_once("config.php");
 
-function isDuplicate($db) {
-	$res = $db->query("SELECT STEAMID64 FROM users WHERE STEAMID64='getSteamID64()'");
+function is_duplicate($db) {
+	$res = $db->query("SELECT STEAMID64 FROM users WHERE STEAMID64='get_steamid64()'");
 	if ($res->rowCount() > 0) {
 		return true; // duplicate
 	} else {
@@ -10,7 +10,7 @@ function isDuplicate($db) {
 	}
 }
 function register_firsttime($db, $sid) {
-	if (!isDuplicate($db)) {
+	if (!is_duplicate($db)) {
 		$stmt = $db->prepare("INSERT INTO users(STEAMID64, date_registered) VALUES(?, NOW())");
 		$stmt->execute(array($sid));
 	} else {
@@ -18,7 +18,7 @@ function register_firsttime($db, $sid) {
 	}
 }
 /* Query the database WHERE username = ? using secure prepared statements */
-function idQuery( $query, $db, $steamid64 ) {
+function id_query( $query, $db, $steamid64 ) {
 	$stmt = $db->prepare($query);
 	$stmt->bindValue(1, $steamid64, PDO::PARAM_STR);
 	$stmt->execute();
@@ -26,15 +26,15 @@ function idQuery( $query, $db, $steamid64 ) {
 	
 	return $row;
 }
-function getSteamID64() {
+function get_steamid64() {
 	include("libraries/steamauth/userInfo.php");
-	if (isLoggedIn()) {
+	if (logged_in()) {
 		return $steamprofile['steamid'];
 	} else {
 		return "0";
 	}
 }
-function isLoggedIn() {
+function logged_in() {
 	if (isset($_SESSION["steamid"])) {
 		return true;
 	} else {
@@ -46,13 +46,13 @@ function update_tradeurl($steamid64, $tradeurl, $db) {
 	$query->execute(array($tradeurl, $steamid64));
 }
 // query the database and return a user's tradeurl as a string
-function getTradeUrl($steamid64, $db) {
-	$query = idQuery("SELECT trade_url FROM users WHERE steamid64 = ?", $db, $steamid64);
+function trade_url($steamid64, $db) {
+	$query = id_query("SELECT trade_url FROM users WHERE steamid64 = ?", $db, $steamid64);
 	return $query["trade_url"];
 }
 // query the database and return a user's tradeurl as an int
-function getCredits($steamid64) {
-	$query = idQuery("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64);
+function credits($steamid64) {
+	$query = id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64);
 	return $query["credits"];
 }
 /**
@@ -104,10 +104,13 @@ function emit_game_data($gamedata, $client) {
 	$client->emit('broadcast', $gamedata);
 	$client->close();
 }
-function createNetworkData($selected_items, $db) {
+function create_network_data($selected_items, $db) {
+	if (!logged_in()) {
+		return;
+	}
 	$data = array();
-	$data[0]['sid'] = getSteamID64();
-	$data[0]['tradeurl'] = getTradeUrl(getSteamID64(), $db);
+	$data[0]['sid'] = get_steamid64();
+	$data[0]['tradeurl'] = trade_url(get_steamid64(), $db);
 	
 	$count = 1;
 	foreach ($selected_items as $i) {
@@ -122,7 +125,7 @@ function createNetworkData($selected_items, $db) {
  * This is now handled by the Steambot so don't call it.
  * Still keeping it here cause we might need it
  */
-function pricecheck($selected) {
+function price_check($selected) {
 	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730
 	$bptf_obj = json_decode(file_get_contents("bp_schema.txt"), true);
 	$bpitems = $bptf_obj['response']['items'];
