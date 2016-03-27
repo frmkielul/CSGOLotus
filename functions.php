@@ -51,9 +51,9 @@ function trade_url($steamid64, $db) {
 	return $query["trade_url"];
 }
 // query the database and return a user's tradeurl as an int
-function credits($steamid64) {
+function credits($steamid64, $db) {
 	$query = id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64);
-	return $query["credits"];
+	return "&#8353;" . $query["credits"];
 }
 /**
  * @param int $init
@@ -99,9 +99,9 @@ function add_seeds($ss, $cs)  {
  * ['id' => 'XM1014 | Blue Spruce (Minimal Wear)', 'amt' => 1]
  * ]
  */
-function emit_game_data($gamedata, $client) {
+function emit_data($data, $client) {
 	$client->initialize();
-	$client->emit('broadcast', $gamedata);
+	$client->emit('broadcast', $data);
 	$client->close();
 }
 function create_network_data($selected_items, $db) {
@@ -122,23 +122,35 @@ function create_network_data($selected_items, $db) {
 }
 /**
  * @param array $selected
- * This is now handled by the Steambot so don't call it.
- * Still keeping it here cause we might need it
  */
 function price_check($selected) {
 	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730
 	$bptf_obj = json_decode(file_get_contents("bp_schema.txt"), true);
 	$bpitems = $bptf_obj['response']['items'];
 
-	$inv_obj = json_decode(file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"), true);
+	$inv_obj = json_decode(file_get_contents("scruffybot_inv.txt"), true);
 	$invitems = $inv_obj['rgDescriptions'];
 	
-	$selected = array();
 	$total = 0.00;
 	
 	foreach ($selected as $a) {
 		$total = $total + $bpitems[$a]['value'];
 	}
 	return '$'.($total/100);
+}
+function price_check_credits($selected) {
+	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730
+	$bptf_obj = json_decode(file_get_contents("bp_schema.txt"), true);
+	$bpitems = $bptf_obj['response']['items'];
+
+	$inv_obj = json_decode(file_get_contents("scruffybot_inv.txt"), true);
+	$invitems = $inv_obj['rgDescriptions'];
+	
+	$total = 0.00;
+	
+	foreach ($selected as $a) {
+		$total = $total + $bpitems[$a]['value'];
+	}
+	return '&#8353;'. round(((($total/100))/0.03)*100, 0);
 }
 ?>
