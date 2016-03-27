@@ -4,9 +4,9 @@ require_once("config.php");
 function is_duplicate($db) {
 	$res = $db->query("SELECT STEAMID64 FROM users WHERE STEAMID64='get_steamid64()'");
 	if ($res->rowCount() > 0) {
-		return true; // duplicate
+		return true;
 	} else {
-		return false; // no duplicate
+		return false;
 	}
 }
 function register_firsttime($db, $sid) {
