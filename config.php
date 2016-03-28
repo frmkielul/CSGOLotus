@@ -13,6 +13,8 @@ use Steam\Utility\GuzzleUrlBuilder;
 use ElephantIO\Client as EClient;
 use ElephantIO\Engine\SocketIO\Version1X;
 
+$GLOBALS['creditprefix'] = "&#8353;";
+
 /* SteamAPI Configuration */
 $steam = new Steam(new Configuration([
     Configuration::STEAM_KEY => '2725770A29064372233CB9F5636B30D5'
