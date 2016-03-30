@@ -24,6 +24,6 @@ echo "Your current account balance: " . credits(get_steamid64(), $db) . "<br />"
 echo "Your account will be deducted " . price_check_credits($market_hash_names) . " credits for this transaction.";
 
 echo "<br /><br />";
-emit_data(create_network_data($asset_ids, $db), $client);	
+emit_data(create_network_data($asset_ids, $db), $client);
 echo "Your request has been processed and you will receieve a trade offer on Steam.<br />";
 ?>

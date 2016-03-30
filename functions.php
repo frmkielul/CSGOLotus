@@ -136,7 +136,7 @@ function price_check($selected) {
 	foreach ($selected as $a) {
 		$total = $total + $bpitems[$a]['value'];
 	}
-	return '$' . round(((($total/100))/0.03)*100, 0);
+	return '$' . ($total/100);
 }
 function price_check_credits($selected) {
 	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730

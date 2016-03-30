@@ -1,10 +1,11 @@
 <?php
 require_once("config.php");
 
-/*if (!logged_in()) {
-	echo "Not logged in. Click " . "<a href=index.php>here</a>" . " to return to the homepage.";
-	//die();	// prevent any unnecessary calls to price_check and price_check_credits which slow down the page a lot.
-}*/
+$show_prices = true;
+
+if (!logged_in()) {
+	$show_prices = false;
+}
 
 $json_obj = json_decode(file_get_contents("scruffybot_inv.txt"), true);
 $descriptions = $json_obj['rgDescriptions'];
