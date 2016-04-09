@@ -6,17 +6,17 @@ $show_prices = true;
 if (!logged_in()) {
 	$show_prices = false;
 }
-
-$json_obj = json_decode(file_get_contents("scruffybot_inv.txt"), true);
+// file_put_contents("scruffybot_inv.txt", file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"));
+$json_obj = json_decode(file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"), true);
 $descriptions = $json_obj['rgDescriptions'];
 $inventory = $json_obj['rgInventory'];
-file_put_contents("scruffybot_inv.txt", file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"));
 
 echo "<h2>CSGOLotus Market</h2>";
 echo "&#8353; = CSGOLotus Credits<br/>";
 echo "$ = U.S. Dollars";
 
 // TODO: to allow cases to be displayed, we must find a common identifier for cases, and exclude them from the $a['actions'][0]['link'] call.
+// or alternatively, dont allow cases at all
 echo "<form action=purchase.php method=POST>";
 foreach ($descriptions as $a) {
 	$img_url = "http://cdn.steamcommunity.com/economy/image/" . $a['icon_url'];
