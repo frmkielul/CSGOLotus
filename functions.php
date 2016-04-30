@@ -3,11 +3,7 @@ require_once("config.php");
 
 function is_duplicate($db) {
 	$res = $db->query("SELECT STEAMID64 FROM users WHERE STEAMID64='get_steamid64()'");
-	if ($res->rowCount() > 0) {
-		return true;
-	} else {
-		return false;
-	}
+	return $res->rowCount() > 0
 }
 function register_firsttime($db, $sid) {
 	if (!is_duplicate($db)) {
@@ -35,11 +31,7 @@ function get_steamid64() {
 	}
 }
 function logged_in() {
-	if (isset($_SESSION["steamid"])) {
-		return true;
-	} else {
-		return false;
-	}
+	return isset($_SESSION["steamid"]);
 }
 function update_tradeurl($steamid64, $tradeurl, $db) {
 	$query = $db->prepare("UPDATE users SET trade_url = ? WHERE STEAMID64 = ?");
@@ -54,6 +46,7 @@ function trade_url($steamid64, $db) {
 function credits($steamid64, $db) {
 	$query = id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64);
 	return "&#8353;" . $query["credits"];
+	// return "&#8353;" . id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64)["credits"];
 }
 /**
  * @param int $init
@@ -134,7 +127,7 @@ function price_check($selected) {
 	$total = 0.00;
 	
 	foreach ($selected as $a) {
-		$total = $total + $bpitems[$a]['value'];
+		$total += $bpitems[$a]['value'];
 	}
 	return '$' . ($total/100);
 }
@@ -151,6 +144,6 @@ function price_check_credits($selected) {
 	foreach ($selected as $a) {
 		$total = $total + $bpitems[$a]['value'];
 	}
-	return $GLOBALS['creditprefix'] . round(((($total/100))/0.03)*100, 0);
+	return $GLOBALS['creditprefix'] . round((($total/100)/0.03)*100, 0);
 }
 ?>
