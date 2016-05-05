@@ -1,6 +1,8 @@
 <?php
 require_once("config.php");
 
+// generate 2 random 10-digit base-3 strings
+// ex: 2220210110
 $serverseed = base_convert(rand(29524, 59048), 10, 3);
 $clientseed = base_convert(rand(29524, 59048), 10, 3);
 $hash = hash("sha256", hash("sha256", $serverseed));
