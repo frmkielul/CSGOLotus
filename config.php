@@ -26,7 +26,7 @@ $steam->addRunner(new DecodeJsonStringRunner());
 $DB_USER = "csgolotus";
 $DB_NAME = "csgolotus";
 $DB_PASS = "ufUL3e86NqUqjhV";	// TODO: Store this elsewhere for security reasons
-$DB_HOST = "localhost";
+$DB_HOST = "localhost";			// TODO: Change password in the future cause its ON FUCKING GITHUB
 
 $db = new PDO("mysql:dbname=$DB_NAME;host=$DB_HOST", $DB_USER, $DB_PASS);
 
