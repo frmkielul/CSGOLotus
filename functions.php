@@ -117,7 +117,7 @@ function create_network_data($selected_items, $db) {
  * @param array $selected
  */
 function price_check($selected) {
-	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730
+	// http://backpack.tf/api/IGetMarketPrices/v1/?key=572ffdc0c4404533f945e852&appid=730
 	$bptf_obj = json_decode(file_get_contents("bp_schema.txt"), true);
 	$bpitems = $bptf_obj['response']['items'];
 
@@ -132,7 +132,7 @@ function price_check($selected) {
 	return '$' . ($total/100);
 }
 function price_check_credits($selected) {
-	// http://backpack.tf/api/IGetMarketPrices/v1/?key=56cd0ca5b98d88be2ef9de16&appid=730
+	// http://backpack.tf/api/IGetMarketPrices/v1/?key=572ffdc0c4404533f945e852&appid=730
 	$bptf_obj = json_decode(file_get_contents("bp_schema.txt"), true);
 	$bpitems = $bptf_obj['response']['items'];
 
