@@ -15,12 +15,6 @@ echo "Server Seed Hash: " . $hash . "<br />";
 echo "Server Seed: " . $serverseed . "<br />";
 echo "Client Seed: " . $clientseed . "<br />";
 echo "Result: " . implode("", $result_array);
-
-if (isset($_POST["submit"])) {
-	emit_game_data(array(['server_seed' => $serverseed], ['client_seed' => $clientseed]), $client);
-	echo "<br />Game data send with values: " . $serverseed . "	" . $clientseed . "<br/>";
-}
-
 ?>
 <html>
 <body>
