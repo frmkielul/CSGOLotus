@@ -25,5 +25,3 @@ echo "Result: " . implode("", $result_array);
 
 </body>
 </html>
-
-

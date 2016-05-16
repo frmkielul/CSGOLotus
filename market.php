@@ -15,10 +15,12 @@ echo "<h2>CSGOLotus Market</h2>";
 echo "&#8353; = CSGOLotus Credits<br/>";
 echo "$ = U.S. Dollars";
 
-// TODO: to allow cases to be displayed, we must find a common identifier for cases, and exclude them from the $a['actions'][0]['link'] call.
-// or alternatively, dont allow cases at all
 echo "<form action=purchase.php method=POST>";
 foreach ($descriptions as $a) {
+	// skips any csgo cases
+	if ($a["commodity"] == 1) {
+		continue;
+	}
 	$img_url = "http://cdn.steamcommunity.com/economy/image/" . $a['icon_url'];
 	$value = "";
 	foreach ($inventory as $x) {
