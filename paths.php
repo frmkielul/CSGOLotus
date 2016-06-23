@@ -1,3 +1,6 @@
+<?php
+require_once("config.php");
+?>
 <html>
   <head>
     <title>CSGO Lotus - Paths</title>
