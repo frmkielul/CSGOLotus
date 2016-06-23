@@ -46,7 +46,6 @@ function trade_url($steamid64, $db) {
 function credits($steamid64, $db) {
 	$query = id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64);
 	return "&#8353;" . $query["credits"];
-	// return "&#8353;" . id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64)["credits"];
 }
 /**
  * @param int $init
@@ -144,6 +143,6 @@ function price_check_credits($selected) {
 	foreach ($selected as $a) {
 		$total = $total + $bpitems[$a]['value'];
 	}
-	return $GLOBALS['creditprefix'] . round((($total/100)/0.03)*100, 0);
+	return $GLOBALS['creditprefix'] . round(($total/100)/0.03, 0);
 }
 ?>
