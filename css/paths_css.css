@@ -13,6 +13,9 @@ header{
 }
 
 .steambutton {
+  text-align: left;
+  margin-top: 12.5px;
+  margin-left: 12.5px;
   display: block;
   background-color: #6f9f31;
   width: 270px;
