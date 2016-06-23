@@ -9,7 +9,7 @@ body{
 
 header{
   background-color: #2B2B2B;
-  height: 100px;
+  height: 75px;
 }
 
 .steambutton {
@@ -30,6 +30,7 @@ header{
 }
 .steambutton span,
 .steambutton .icon {
+  color: #fff;
   display: block;
   height: 100%;
   text-align: center;
@@ -37,7 +38,7 @@ header{
   top: 0;
 }
 .steambutton span {
-
+  color: #fff;
 	font-family:  'Exo 2', sans-serif;
 	font-weight: bold;
 	letter-spacing: 0.1em;
@@ -49,6 +50,7 @@ header{
           transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .steambutton span:after {
+  color: #fff;
   content: '';
   background-color: #5d8628;
   width: 2px;
@@ -58,12 +60,14 @@ header{
   right: -1px;
 }
 .steambutton .icon {
+  color: #fff;
   width: 25%;
   right: 0;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
           transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
 }
 .steambutton .icon .fa {
+  color: #fff;
   font-size: 30px;
   line-height: 50px;
   -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
@@ -71,12 +75,15 @@ header{
 }
 
 .steambutton.success span, .steambutton:hover span {
+  color: #fff;
   left: -72%;
   opacity: 0;
 }
 .steambutton.success .icon, .steambutton:hover .icon {
+  color: #fff;
   width: 100%;
 }
 .steambutton.success .icon .fa, .steambutton:hover .icon .fa {
+  color: #fff;
   font-size: 45px;
 }
