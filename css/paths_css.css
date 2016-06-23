@@ -6,3 +6,8 @@
 body{
   background-color: #111111;
 }
+
+header{
+  background-color: #1E1E1E;
+  height: 100px;
+}
