@@ -22,6 +22,7 @@ function id_query( $query, $db, $steamid64 ) {
 
 	return $row;
 }
+// Deprecated as of 6/23/16. Use $_SESSION["steamid"] instead
 function get_steamid64() {
 	include("libraries/steamauth/userInfo.php");
 	if (logged_in()) {
