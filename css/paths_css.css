@@ -44,6 +44,8 @@ header{
 #userinfo #icon a:link,
 #userinfo #icon a:visited,
 #userinfo #icon a:hover {
+  color: #EDE1DA;
+  font-size: 16px;
 }
 #settings{
     color: #FFF;
