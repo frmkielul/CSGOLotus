@@ -20,12 +20,13 @@ header{
   margin: 0 auto;
 }
 #userinfo {
-  margin: auto;
-    position: absolute;
-    top: 0; bottom: 0; left: 0; right: 0;
   color: #EDE1DA;
+  position: absolute;
+  right: 12.5px;
+  top: 12.5px;
+  margin: auto 0 ;
   font-family: 'Exo 2';
-  font-size: 16px;
+  font-size: 22px;
 }
 #userinfo span {
     font-family: 'Exo 2', sans-serif;
