@@ -20,7 +20,8 @@ header{
   margin: 0 auto;
 }
 #avatar{
-   border: 1.5px solid #EDE1DA;
+   border: 2px solid #EDE1DA;
+   border-radius: .5rem;
    height: 50px;
    vertical-align: middle;
    margin-right: 7px;
