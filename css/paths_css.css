@@ -19,6 +19,9 @@ header{
   width: 80%;
   margin: 0 auto;
 }
+#logo{
+  margin-left: 15px;
+}
 #avatar{
    border: 2px solid #EDE1DA;
    border-radius: .5rem;
