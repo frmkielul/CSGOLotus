@@ -46,7 +46,7 @@ require_once("config.php");
                   </div>
                 </div>
               </div>';
-              echo '<div id="userinfo"><img id= "avatar" height="64px" width:"64px" src="'.$steamprofile["avatarmedium"].'"class="img-rounded">Welcome, <span>' . $steamprofile['personaname'] . '</span><div id="icon" data-toggle="modal" data-target="#settings"><a href="#"><i class="fa fa-cog"></i></a></div></div>';
+              echo '<div id="userinfo"><img id= "avatar" src="'.$steamprofile["avatarmedium"].'"class="img-rounded">Welcome, <span>' . $steamprofile['personaname'] . '</span><div id="icon" data-toggle="modal" data-target="#settings"><a href="#"><i class="fa fa-cog"></i></a></div></div>';
           }
       ?>
     </header>
