@@ -48,7 +48,7 @@ require_once("config.php");
                   </div>
                 </div>
               </div>';
-              echo '<div id="userinfo"><img id="balance" src="img/token.png">'.credits($_SESSION["steamid"], $db).'<img id= "avatar" src="'.$steamprofile["avatarfull"].'">Welcome, <span>' . $steamprofile['personaname'] . '</span><div id="icon"><a href="#"><i class="fa fa-cog"></i></a></div></div>';
+              echo '<div id="userinfo"><img id="balance" src="img/token.png">'.number_format(credits($_SESSION["steamid"], $db)).'<img id= "avatar" src="'.$steamprofile["avatarfull"].'">Welcome, <span>' . $steamprofile['personaname'] . '</span><div id="icon"><a href="#"><i class="fa fa-cog"></i></a></div></div>';
           }
       ?>
     </header>
