@@ -10,6 +10,7 @@ body{
 header{
   background-color: #2B2B2B;
   height: 75px;
+  position: relative;
 }
 
 #wrapper{
