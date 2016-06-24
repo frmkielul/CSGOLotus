@@ -24,7 +24,7 @@ header{
   line-height: 50px;
   margin: auto;
   color: #fff;
-  position: absolute;
+  position: relative;
   right: 12.5px;
   top: 12.5px;
   cursor: pointer;
