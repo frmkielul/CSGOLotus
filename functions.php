@@ -19,7 +19,7 @@ function id_query( $query, $db, $steamid64 ) {
 	$stmt->bindValue(1, $steamid64, PDO::PARAM_STR);
 	$stmt->execute();
 	$row = $stmt->fetch();
-	
+
 	return $row;
 }
 function get_steamid64() {
@@ -45,7 +45,7 @@ function trade_url($steamid64, $db) {
 // query the database and return a user's tradeurl as an int
 function credits($steamid64, $db) {
 	$query = id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64);
-	return "&#8353;" . $query["credits"];
+	return $query["credits"];
 	// return "&#8353;" . id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64)["credits"];
 }
 /**
@@ -84,11 +84,11 @@ function add_seeds($ss, $cs)  {
 /**
  * @param array $gamedata
  * @param Client $client
- * 
+ *
  * example array:
  * [
- * ['sid' => '76561198043295952', 'tradeurl' => 'https://steamcommunity.com/tradeoffer/new/?partner=83030224&token=iOs-d62d'], 
- * ['id' => 'Tec-9 | VariCamo (Field-Tested)', 'amt' => 1], 
+ * ['sid' => '76561198043295952', 'tradeurl' => 'https://steamcommunity.com/tradeoffer/new/?partner=83030224&token=iOs-d62d'],
+ * ['id' => 'Tec-9 | VariCamo (Field-Tested)', 'amt' => 1],
  * ['id' => 'XM1014 | Blue Spruce (Minimal Wear)', 'amt' => 1]
  * ]
  */
@@ -104,7 +104,7 @@ function create_network_data($selected_items, $db) {
 	$data = array();
 	$data[0]['sid'] = get_steamid64();
 	$data[0]['tradeurl'] = trade_url(get_steamid64(), $db);
-	
+
 	$count = 1;
 	foreach ($selected_items as $i) {
 		$data[$count]['id'] = $i;
@@ -123,9 +123,9 @@ function price_check($selected) {
 
 	$inv_obj = json_decode(file_get_contents("scruffybot_inv.txt"), true);
 	$invitems = $inv_obj['rgDescriptions'];
-	
+
 	$total = 0.00;
-	
+
 	foreach ($selected as $a) {
 		$total += $bpitems[$a]['value'];
 	}
@@ -138,9 +138,9 @@ function price_check_credits($selected) {
 
 	$inv_obj = json_decode(file_get_contents("scruffybot_inv.txt"), true);
 	$invitems = $inv_obj['rgDescriptions'];
-	
+
 	$total = 0.00;
-	
+
 	foreach ($selected as $a) {
 		$total = $total + $bpitems[$a]['value'];
 	}

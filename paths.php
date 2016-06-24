@@ -16,7 +16,7 @@ require_once("config.php");
   <body>
     <div id="wrapper">
     <header>
-      <img id="logo" height="75" src="img/logo.png"/>
+      <img id="logo" height="75px" src="img/logo.png"/>
       <?php
           if(!isset($_SESSION["steamid"])) {
               steamlogin($db);
@@ -48,7 +48,7 @@ require_once("config.php");
                   </div>
                 </div>
               </div>';
-              echo '<div id="userinfo"><img id= "avatar" src="'.$steamprofile["avatarfull"].'">Welcome, <span>' . $steamprofile['personaname'] . '</span><div id="icon"><a href="#"><i class="fa fa-cog"></i></a></div></div>';
+              echo '<div id="userinfo"><img id="balance" src="img/token.png" height="75px">'.credits($get_steamid64(), $db).'<img id= "avatar" src="'.$steamprofile["avatarfull"].'">Welcome, <span>' . $steamprofile['personaname'] . '</span><div id="icon"><a href="#"><i class="fa fa-cog"></i></a></div></div>';
           }
       ?>
     </header>
