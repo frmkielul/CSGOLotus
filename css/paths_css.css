@@ -41,7 +41,7 @@ header{
     font-size: 18px;
 }
 #userinfo #icon {
-    color: #565352;
+    color: #D3C9C2;
     font-size: 16px;
     padding-left: 10px;
     display: inline-block;
@@ -51,7 +51,7 @@ header{
 #userinfo #icon a:link,
 #userinfo #icon a:visited,
 #userinfo #icon a:hover {
-  color: #565352;
+  color: #D3C9C2;
   font-size: 16px;
 }
 #settings{
