@@ -19,6 +19,9 @@ header{
   width: 80%;
   margin: 0 auto;
 }
+#avatar{
+   border: 1px #EDE1DA;
+}
 #userinfo {
   color: #EDE1DA;
   position: absolute;
