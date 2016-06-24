@@ -18,6 +18,12 @@ header{
   margin: 0 auto;
 }
 
+#userinfo{
+  position: absolute;
+  right: 12.5px;
+  top: 12.5px;
+}
+
 .steambutton {
   display: block;
   background-color: #6f9f31;
@@ -27,8 +33,6 @@ header{
   margin: auto;
   color: #fff;
   position: absolute;
-  right: 12.5px;
-  top: 12.5px;
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
