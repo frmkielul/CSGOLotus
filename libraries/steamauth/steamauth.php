@@ -25,7 +25,7 @@ function steamlogin($db)
                 $openid->identity = 'http://steamcommunity.com/openid';
                 header('Location: ' . $openid->authUrl());
             }
-            echo "<a href='/?login' class='steambutton'><span>Login with Steam</span><div class='icon'><i class='fa fa-steam-square'></i></div></a>";
+            echo "<a href='?login' class='steambutton'><span>Login with Steam</span><div class='icon'><i class='fa fa-steam-square'></i></div></a>";
         }
 
         elseif ($openid->mode == 'cancel') {
