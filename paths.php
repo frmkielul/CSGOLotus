@@ -15,7 +15,7 @@ require_once("config.php");
   <body>
     <div id="wrapper">
     <header>
-      <img src="img/logo.png"/>
+      <img height="75" src="img/logo.png"/>
       <?php
           if(!isset($_SESSION["steamid"])) {
               steamlogin($db);
