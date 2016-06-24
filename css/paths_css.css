@@ -33,6 +33,8 @@ header{
   margin: auto;
   color: #fff;
   position: absolute;
+  right: 12.5px;
+  top: 12.5px;
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
