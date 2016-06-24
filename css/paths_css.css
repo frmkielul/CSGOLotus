@@ -22,7 +22,7 @@ header{
 #userinfo {
   position: absolute;
   right: 12.5px;
-  top: 12.5px;
+  vertical-align: middle;
     font-family: 'Exo 2';
     font-size: 16px;
 }
