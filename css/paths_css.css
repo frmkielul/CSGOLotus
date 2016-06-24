@@ -13,9 +13,6 @@ header{
 }
 
 .steambutton {
-  text-align: left;
-  margin-top: 12.5px;
-  margin-left: 12.5px;
   display: block;
   background-color: #6f9f31;
   width: 270px;
@@ -24,6 +21,8 @@ header{
   margin: auto;
   color: #fff;
   position: absolute;
+  right: 12.5px;
+  top: 12.5px
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
