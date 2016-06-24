@@ -22,7 +22,7 @@ header{
 #avatar{
    border: 2px solid #EDE1DA;
    border-radius: .5rem;
-   height: 45px;
+   height: 50px;
    vertical-align: middle;
    margin-right: 10px;
 }
@@ -30,7 +30,7 @@ header{
   color: #EDE1DA;
   position: absolute;
   right: 30px;
-  top: 15px;
+  top: 12.5px;
   margin: auto 0 ;
   font-family: 'Exo 2';
   font-size: 18px;
