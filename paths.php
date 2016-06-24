@@ -13,6 +13,7 @@ require_once("config.php");
     <link href="css/paths_css.css" rel="stylesheet">
   </head>
   <body>
+    <div id="wrapper">
     <header>
       <?php
           if(!isset($_SESSION["steamid"])) {
@@ -49,5 +50,6 @@ require_once("config.php");
           }
       ?>
     </header>
+    </div>
   </body>
 </html>

@@ -12,6 +12,10 @@ header{
   height: 75px;
 }
 
+wrapper{
+  width: 80%;
+}
+
 .steambutton {
   display: block;
   background-color: #6f9f31;
