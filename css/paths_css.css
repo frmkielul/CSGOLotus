@@ -20,10 +20,10 @@ header{
   margin: 0 auto;
 }
 #avatar{
-   border: 2px solid #EDE1DA;
+   border: 1.5px solid #EDE1DA;
    height: 50px;
    vertical-align: middle;
-   padding-right: 7px;
+   margin-right: 7px;
 }
 #userinfo {
   color: #EDE1DA;
