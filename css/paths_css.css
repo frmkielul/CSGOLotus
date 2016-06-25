@@ -155,7 +155,6 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #1E1E1E;
-    transition: 1s;
 }
 
 li {
@@ -171,6 +170,8 @@ li a {
     padding: 14px 16px;
     text-decoration: none;
     transform: skew(20deg);
+    background-color: #1E1E1E;
+    transition: 1s;
 }
 
 li a:hover {
