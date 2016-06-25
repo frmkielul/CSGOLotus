@@ -155,12 +155,12 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #1E1E1E;
+    transition: 1s;
 }
 
 li {
     float: left;
     display:inline-block;
-    transition: background 0.5s;
     transform: skew(-20deg);
 }
 
