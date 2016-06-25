@@ -160,7 +160,6 @@ ul {
 li {
     float: left;
     display:inline-block;
-    transform: skew(-20deg);
 }
 
 li a {
@@ -169,12 +168,13 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
-    background-color: #1E1E1E;
+    background-color: #1E1E1E;.
     transition: .5s;
+    transform: skew(-20deg);
 }
 
 li span{
-    transform: skew(20deg);  
+    transform: skew(20deg);
 }
 
 li a:hover {
