@@ -26,10 +26,10 @@ require_once("config.php");
     </header>
     <nav>
       <ul>
-        <li><a href="index.php">Paths</a></li>
-        <li><a href="#">Game</a></li>
-        <li><a href="#">Game</a></li>
-        <li><a href="market.php">Market</a></li>
+        <li><a href="index.php"><span>Paths</span></a></li>
+        <li><a href="#"><span>Game</span></a></li>
+        <li><a href="#"><span>Game</span></a></li>
+        <li><a href="market.php"><span>Market</span></a></li>
       </ul>
     </nav>
     </div>
