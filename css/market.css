@@ -1,0 +1,10 @@
+section{
+  width: 80%
+}
+
+aside{
+  width: auto;
+  position: fixed;
+  top: 100px;
+  border-left: 1px solid #00638E;
+}
