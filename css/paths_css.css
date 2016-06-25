@@ -170,11 +170,6 @@ li a {
     text-decoration: none;
     background-color: #1E1E1E;.
     transition: .5s;
-    transform: skew(20deg);
-}
-
-li span{
-    transform: skew(-20deg);
 }
 
 li a:hover {
