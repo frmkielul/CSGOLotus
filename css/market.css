@@ -4,6 +4,7 @@ section{
 }
 
 aside{
+  margin-top: 15px;
   height: 250px;
   width: calc(20% - 1px);
   position: relative;
