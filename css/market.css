@@ -3,10 +3,11 @@ section{
 }
 
 aside{
-  width: auto;
+  height: 100%;
+  width: 19.5%;
   position: fixed;
   top: 100px;
-  border-left: 1px solid #00638E;
+  border-left: .5% solid #00638E;
   float: right;
   display:inline-block;
 }

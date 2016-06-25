@@ -44,11 +44,10 @@ if (!logged_in()) {
 			<?php
 			echo "<form action=purchase.php method=POST>";
 			draw_market();
-
-			if ($show_submit) echo "<input type=submit value=Purchase Items>"; echo "</form>";
 			?>
 		</section>
 		<aside>
+			<?php if ($show_submit) echo "<input type=submit value=Purchase Items>"; echo "</form>"; ?>
 		</aside>
     </div>
   </body>
