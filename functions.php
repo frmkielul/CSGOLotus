@@ -177,8 +177,8 @@ function draw_market() {
 		$inspect_url = build_inspect_link($a, $value);
 
 		echo "<img src=".$img_url." height='112'/>";
-		echo $usd_value;
-		echo "(".$lotus_value.")";
+		echo $lotus_value;
+		echo "(".$usd_value.")";
 		echo "<a href=".$inspect_url.">Inspect in Game</a>";
 	}
 
