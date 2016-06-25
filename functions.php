@@ -147,4 +147,13 @@ function price_check_credits($selected) {
 	}
 	return $GLOBALS['creditprefix'] . round((($total/100)/0.03)*100, 0);
 }
+/* Market Functions */
+function item_img_url($item) {
+	return "http://cdn.steamcommunity.com/economy/image/" . $item['icon_url'];
+}
+function build_inspect_link($item, $value) {
+	$inspect_url = $item['actions'][0]['link'];
+	$url_fragment = explode("%", $inspect_url)[5];
+	return "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198180102897A" . $value . $url_fragment;
+}
 ?>

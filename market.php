@@ -20,17 +20,21 @@ foreach ($descriptions as $a) {
 	if ($a["commodity"] == 1) {
 		continue;
 	}
-	$img_url = "http://cdn.steamcommunity.com/economy/image/" . $a['icon_url'];
+	$img_url = item_img_url($a);
 	$value = "";
 	foreach ($inventory as $x) {
 		if ($a['classid'] == $x['classid'] && $a['instanceid'] == $x['instanceid']) {
 			$value = $x['id'];
 		}
 	}
-	$inspect_url = $a['actions'][0]['link'];
-	$url_fragment = explode("%", $inspect_url)[5];
-	echo "<input type='checkbox' name='item[]' value=\"" . $a['market_hash_name'] . "/" . $value . "\"><img src=".$img_url." height='64' width='64'/>" . $a['market_hash_name'] . " " .
-	price_check_credits(array($a['market_hash_name'])) . " | " . price_check(array($a['market_hash_name'])) . " | <a href=steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198180102897A" . $value . $url_fragment .">Inspect In-Game</a><br>";
+	$usd_value = price_check(array($a['market_hash_name']));
+	$lotus_value = price_check_credits(array($a['market_hash_name']));
+	$inspect_url = build_inspect_link($a, $value);
+
+	echo $usd_value;
+	echo $lotus_value;
+	echo "<img src=".$img_url." height='64' width='64'/>";
+	echo "<a href=".$inspect_url.">Inspect in Game</a>";
 }
 
 if ($show_submit) echo "<input type=submit value=Purchase Items>";
