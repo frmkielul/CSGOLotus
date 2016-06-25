@@ -6,7 +6,7 @@ section{
 aside{
   margin-top: 15px;
   height: 250px;
-  width: calc(20% - 1px);
+  width: calc(20% - 2px);
   position: relative;
   border: 1px dotted #00638E;
   float: right;
