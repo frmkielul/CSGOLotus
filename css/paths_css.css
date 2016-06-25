@@ -152,13 +152,13 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #1E1E1E;
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -o-transform: skew(20deg);
 }
 
 li {
     float: left;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
 }
 
 li a {
