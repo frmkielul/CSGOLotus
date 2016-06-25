@@ -47,6 +47,8 @@ if (!logged_in()) {
 			if ($show_submit) echo "<input type=submit value=Purchase Items>"; echo "</form>";
 			?>
 		</section>
+		<aside>
+		</aside>
     </div>
   </body>
 </html>
