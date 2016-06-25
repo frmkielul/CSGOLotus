@@ -16,6 +16,14 @@ require_once("config.php");
   <body>
     <div id="wrapper">
     <header>
+      <nav>
+        <ul>
+          <li><a href="index.php">Paths</a></li>
+          <li><a href="#">Game</a></li>
+          <li><a href="#">Game</a></li>
+          <li><a href="market.php">Market</a></li>
+        </ul>
+      </nav>
       <img id="logo" height="75px" src="img/logo.png"/>
       <?php
           if(!isset($_SESSION["steamid"])) {
