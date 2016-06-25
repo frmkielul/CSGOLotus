@@ -171,7 +171,7 @@ li a {
     text-decoration: none;
     transform: skew(20deg);
     background-color: #1E1E1E;
-    transition: 1s;
+    transition: .5s;
 }
 
 li a:hover {
