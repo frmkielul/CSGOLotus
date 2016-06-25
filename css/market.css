@@ -4,7 +4,7 @@ section{
 }
 
 aside{
-  padding-left: 10px;
+  margin-left: 10px;
   margin-top: 15px;
   height: 250px;
   width: calc(20% - 13px);
