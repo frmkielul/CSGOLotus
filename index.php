@@ -30,8 +30,8 @@ require_once("config.php");
         <li><a href="#">Game</a></li>
         <li><a href="#">Game</a></li>
         <li><a href="market.php">Market</a></li>
-        <li style="float:right; border: 1px #005275"><a href="account.php" style="background:#00638E;">Deposit</a></li>
         <li style="float:right;"><a href="account.php" style="background:#00638E;">Account</a></li>
+        <li style="float:right; border: 1px #005275"><a href="account.php" style="background:#00638E;">Deposit</a></li>
       </ul>
     </nav>
     </div>
