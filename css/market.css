@@ -22,7 +22,7 @@ aside{
   color: #fff;
   position: relative;
   width: calc(100% - 20px);
-  bottom: 0;
+  top: calc(100% - 50px - 5px);
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
