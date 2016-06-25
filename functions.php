@@ -178,7 +178,7 @@ function draw_market() {
 
 		echo $usd_value;
 		echo $lotus_value;
-		echo "<img src=".$img_url." height='128'/>";
+		echo "<img src=".$img_url." height='96'/>";
 		echo "<a href=".$inspect_url.">Inspect in Game</a>";
 	}
 
