@@ -158,9 +158,10 @@ ul {
 
 li {
     float: left;
-    -webkit-transform: skew(20deg);
-    -moz-transform: skew(20deg);
-    -o-transform: skew(20deg);
+    transition: background 0.2s;
+    -webkit-transform: skew(-20deg);
+    -moz-transform: skew(-20deg);
+    -o-transform: skew(-20deg);
 }
 
 li a {
@@ -169,6 +170,9 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
 }
 
 li a:hover {
