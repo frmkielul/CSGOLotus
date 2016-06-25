@@ -7,4 +7,6 @@ aside{
   position: fixed;
   top: 100px;
   border-left: 1px solid #00638E;
+  float: right;
+  display:inline-block;
 }
