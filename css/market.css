@@ -16,14 +16,13 @@ aside{
 .withdrawbutton {
   display: block;
   background-color: #00638E;
-  width: 270px;
   height: 50px;
   line-height: 50px;
   margin: auto;
   color: #fff;
-  position: absolute;
-  right: 20px;
-  top: 12.5px;
+  position: relative;
+  width: calc(100% - 20px);
+  bottom: 0;
   cursor: pointer;
   overflow: hidden;
   border-radius: 5px;
