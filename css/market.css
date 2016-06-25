@@ -8,7 +8,85 @@ aside{
   height: 250px;
   width: calc(20% - 2px);
   position: relative;
-  border: 1px dotted #00638E;
+  border: 1px dotted #2B2B2B;
   float: right;
   display:inline-block;
+}
+
+.withdrawbutton {
+  display: block;
+  background-color: #00638E;
+  width: 270px;
+  height: 50px;
+  line-height: 50px;
+  margin: auto;
+  color: #fff;
+  position: absolute;
+  right: 20px;
+  top: 12.5px;
+  cursor: pointer;
+  overflow: hidden;
+  border-radius: 5px;
+  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.withdrawbutton span,
+.withdrawbutton .icon {
+  color: #fff;
+  display: block;
+  height: 100%;
+  text-align: center;
+  position: absolute;
+  top: 0;
+}
+.withdrawbutton span {
+  color: #fff;
+	font-family:  'Exo 2', sans-serif;
+	font-weight: bold;
+	letter-spacing: 0.1em;
+  width: 75%;
+  font-size: 14px;
+  text-transform: uppercase;
+  left: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.withdrawbutton span:after {
+  color: #fff;
+  content: '';
+  background-color: #005B82;
+  width: 2px;
+  height: 70%;
+  position: absolute;
+  top: 15%;
+  right: -1px;
+}
+.withdrawbutton .icon {
+  color: #fff;
+  width: 25%;
+  right: 0;
+  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4);
+}
+.withdrawbutton .icon .fa {
+  color: #fff;
+  font-size: 30px;
+  line-height: 50px;
+  -webkit-transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+          transition: all 0.25s cubic-bezier(0.31, -0.105, 0.43, 1.4), height 0.25s ease;
+}
+
+.withdrawbutton.success span, .withdrawbutton:hover span {
+  color: #fff;
+  left: -72%;
+  opacity: 0;
+}
+.withdrawbutton.success .icon, .withdrawbutton:hover .icon {
+  color: #fff;
+  width: 100%;
+}
+.withdrawbutton.success .icon .fa, .withdrawbutton:hover .icon .fa {
+  color: #fff;
+  font-size: 45px;
 }
