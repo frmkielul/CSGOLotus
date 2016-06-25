@@ -8,7 +8,7 @@ if (!logged_in()) {
 
 <html>
   <head>
-    <title>CSGO Lotus - Paths</title>
+    <title>CSGO Lotus - Market</title>
     <meta content="" name="keywords">
     <meta content="" name="description">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
