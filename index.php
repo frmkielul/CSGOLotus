@@ -31,7 +31,7 @@ require_once("config.php");
         <li><a href="#">Game</a></li>
         <li><a href="market.php">Market</a></li>
         <li style="float:right;"><a href="account.php" style="background:#00638E;">Account</a></li>
-        <li style="float:right;"><a href="account.php" style="background:#008E4E;">Deposit</a></li>
+        <li style="float:right;"><a href="account.php" style="background:#008E4E; font-weight: bold;">Deposit</a></li>
       </ul>
     </nav>
     </div>
