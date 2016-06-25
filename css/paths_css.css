@@ -152,6 +152,9 @@ ul {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    -webkit-transform: skew(20deg);
+    -moz-transform: skew(20deg);
+    -o-transform: skew(20deg);
 }
 
 li {
@@ -167,9 +170,5 @@ li a {
 }
 
 li a:hover:not(.active) {
-    background-color: #111;
-}
-
-li a:active {
-    background-color: #008E4E;
+    background-color: #2B2B2B;
 }
