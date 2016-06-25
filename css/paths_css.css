@@ -175,3 +175,7 @@ li a {
 li a:hover {
     background-color: #2B2B2B;
 }
+
+.active{
+  background-color: #2B2B2B;
+}
