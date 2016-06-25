@@ -156,4 +156,31 @@ function build_inspect_link($item, $value) {
 	$url_fragment = explode("%", $inspect_url)[5];
 	return "steam://rungame/730/76561202255233023/+csgo_econ_action_preview%20S76561198180102897A" . $value . $url_fragment;
 }
+function draw_market() {
+	$json_obj = json_decode(file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"), true);
+	$descriptions = $json_obj['rgDescriptions'];
+	$inventory = $json_obj['rgInventory'];
+	foreach ($descriptions as $a) {
+		// skips any csgo cases
+		if ($a["commodity"] == 1) {
+			continue;
+		}
+		$img_url = item_img_url($a);
+		$value = "";
+		foreach ($inventory as $x) {
+			if ($a['classid'] == $x['classid'] && $a['instanceid'] == $x['instanceid']) {
+				$value = $x['id'];
+			}
+		}
+		$usd_value = price_check(array($a['market_hash_name']));
+		$lotus_value = price_check_credits(array($a['market_hash_name']));
+		$inspect_url = build_inspect_link($a, $value);
+
+		echo $usd_value;
+		echo $lotus_value;
+		echo "<img src=".$img_url." height='64' width='64'/>";
+		echo "<a href=".$inspect_url.">Inspect in Game</a>";
+	}
+
+}
 ?>
