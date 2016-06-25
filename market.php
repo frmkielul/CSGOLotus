@@ -47,8 +47,7 @@ if (!logged_in()) {
 			?>
 		</section>
 		<aside>
-			<?php if ($show_submit) echo "<input type='submit' value='Purchase Items'>"; echo "</form>"; ?>
-			<a type='submit' class='withdrawbutton'><span>CASHOUT</span><div class='icon'><i class='fa fa-shopping-cart'></i></div></a>
+			<?php if ($show_submit) echo "<a type='submit' class='withdrawbutton'><span>CASHOUT</span><div class='icon'><i class='fa fa-shopping-cart'></i></div></a>"; echo "</form>"; ?>
 		</aside>
     </div>
   </body>
