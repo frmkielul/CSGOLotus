@@ -4,9 +4,10 @@ section{
 }
 
 aside{
+  padding-left: 10px;
   margin-top: 15px;
   height: 250px;
-  width: calc(20% - 3px);
+  width: calc(20% - 13px);
   position: relative;
   border: 1.5px solid #2B2B2B;
   float: right;
