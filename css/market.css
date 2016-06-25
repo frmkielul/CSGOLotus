@@ -6,9 +6,9 @@ section{
 aside{
   margin-top: 15px;
   height: 250px;
-  width: calc(20% - 2px);
+  width: calc(20% - 3px);
   position: relative;
-  border: 1px dotted #2B2B2B;
+  border: 1.5px solid #2B2B2B;
   float: right;
   display:inline-block;
 }
@@ -55,7 +55,7 @@ aside{
 .withdrawbutton span:after {
   color: #fff;
   content: '';
-  background-color: #004968;
+  background-color: #005275;
   width: 2px;
   height: 70%;
   position: absolute;
