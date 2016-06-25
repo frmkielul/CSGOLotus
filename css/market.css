@@ -7,7 +7,7 @@ aside{
   height: 250px;
   width: calc(20% - 1px);
   position: relative;
-  border-left: 1px dotted #00638E;
+  border: 1px dotted #00638E;
   float: right;
   display:inline-block;
 }
