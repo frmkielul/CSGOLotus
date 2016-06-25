@@ -160,7 +160,7 @@ function draw_market() {
 	$json_obj = json_decode(file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"), true);
 	$descriptions = $json_obj['rgDescriptions'];
 	$inventory = $json_obj['rgInventory'];
-	echo "<table>"
+	echo "<table>";
 	foreach ($descriptions as $a) {
 		// skips any csgo cases
 		if ($a["commodity"] == 1) {
@@ -179,6 +179,6 @@ function draw_market() {
 
 		echo "<td> <img src=".$img_url." height='112'/>".$lotus_value."(".$usd_value.")"."<a href=".$inspect_url.">Inspect in Game</a></td>";
 	}
-	echo "</table>"
+	echo "</table>";
 }
 ?>
