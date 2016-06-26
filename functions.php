@@ -160,6 +160,7 @@ function draw_market() {
 	$json_obj = json_decode(file_get_contents("http://steamcommunity.com/id/thescruffybot/inventory/json/730/2"), true);
 	$descriptions = $json_obj['rgDescriptions'];
 	$inventory = $json_obj['rgInventory'];
+	echo "<table>";
 	foreach ($descriptions as $a) {
 		// skips any csgo cases
 		if ($a["commodity"] == 1) {
@@ -176,10 +177,13 @@ function draw_market() {
 		$lotus_value = price_check_credits(array($a['market_hash_name']));
 		$inspect_url = build_inspect_link($a, $value);
 
+		echo "<tr>";
 		echo "<img src=".$img_url." height='100'/>";
-		echo $lotus_value;
-		echo "<a href=".$inspect_url.">Inspect in Game</a>";
+		echo $a['market_hash_name'] . " | ";
+		echo $lotus_value . " | ";
+		echo "<a href=".$inspect_url.">Inspect in Game</a><br/>";
+		echo "</tr>";
 	}
-
+	echo "</table>";
 }
 ?>
