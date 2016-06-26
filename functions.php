@@ -181,12 +181,12 @@ function draw_market() {
 
 		preg_match('#\((.*?)\)#', $name, $match);
 
-		echo "<tr>";
+		echo '<tr><div class="marketItem">';
 		echo '<p class="skinPrice">'.$lotus_value.'</p>';
 		echo '<img class="skinImage" src="'.$img_url.'" height="100"/>';
 		echo '<p class="skinWear">'.$match[1].'</p>';
-		echo '<a class="skinInspect" href='.$inspect_url.'>Inspect in Game</a>';
-		echo "</tr>";
+		echo '<div class="skinInspect"><a href='.$inspect_url.'>Inspect in Game</a></div>';
+		echo "</div></tr>";
 
 	}
 	echo "</table>";
