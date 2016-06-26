@@ -38,6 +38,9 @@ require_once("config.php");
         } ?>
       </ul>
     </nav>
+    <div id="game">
+      <!-- HEY YOU FUCKING CANCERHOMO, THE GAME GOES HERE -->
+    </div>
     </div>
   </body>
 </html>
