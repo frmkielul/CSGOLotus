@@ -174,15 +174,19 @@ function draw_market() {
 			}
 		}
 		$usd_value = price_check(array($a['market_hash_name']));
+		$name = $a['market_hash_name'];
 		$lotus_value = price_check_credits(array($a['market_hash_name']));
 		$inspect_url = build_inspect_link($a, $value);
 
+		preg_match('#\((.*?)\)#', $name, $match);
+
 		echo "<tr>";
 		echo "<img src=".$img_url." height='100'/>";
-		echo $a['market_hash_name'] . " | ";
+		echo $match[1] . " | ";
 		echo $lotus_value . " | ";
 		echo "<a href=".$inspect_url.">Inspect in Game</a><br/>";
 		echo "</tr>";
+
 	}
 	echo "</table>";
 }
