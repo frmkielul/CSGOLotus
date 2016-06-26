@@ -91,16 +91,18 @@ aside{
   color: #fff;
   font-size: 45px;
 }
-
+tr{
+  display: inline-block;
+}
 .skinPrice{
-
+  text-align: center;
+  font-size: 16px;
 }
 .skinImage{
-
 }
 .skinWear{
-
+  text-align: center;
 }
 .skinInspect{
-  
+  text-align: center;
 }
