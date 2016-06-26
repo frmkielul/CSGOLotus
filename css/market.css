@@ -14,9 +14,8 @@ aside{
   display:inline-block;
 }
 
-input, button, submit { border:none; } 
-
 .withdrawbutton {
+  border: none;
   display: block;
   background-color: #00638E;
   height: 50px;
