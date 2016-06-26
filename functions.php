@@ -190,7 +190,7 @@ function draw_market() {
 		echo '<span class="skinPrice">'.$lotus_value.'</span> </br>';
 		echo '<img class="skinImage" src="'.$img_url.'" height="100"/></br>';
 		echo '<span class="skinWear">'.$match[1].'</span></br>';
-		echo '<div class="skinInspect"><a href='.$inspect_url.'>Inspect in Game</a></div>';
+		echo '<a href='.$inspect_url.'>Inspect in Game</a>';
 		echo "</tr></div>";
 
 	}
