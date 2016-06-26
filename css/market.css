@@ -95,10 +95,12 @@ tr{
   display: inline-block;
 }
 .skinPrice{
+  margin-top: 10px;
   text-align: center;
-  font-size: 16px;
+  font-size: 24px;
 }
 .skinImage{
+
 }
 .skinWear{
   text-align: center;
