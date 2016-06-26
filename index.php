@@ -10,6 +10,8 @@ require_once("config.php");
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link href="css/main.css" rel="stylesheet">
     <meta name="viewport" content="height=device-height, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, target-densitydpi=device-dpi" />
+    <script src="js/phaser.min.js"></script>
+    <script src = "games/paths/paths.js"></script>
   </head>
   <body>
     <div id="wrapper">
@@ -26,8 +28,8 @@ require_once("config.php");
     </header>
     <nav>
       <ul>
-        <li><a href="index.php">Home</a></li>
-        <li><a href="paths.php">Paths</a></li>
+        <li><a href="index.php">Paths</a></li>
+        <li><a href="#">Game</a></li>
         <li><a href="#">Game</a></li>
         <li><a href="market.php">Market</a></li>
         <?php if(isset($_SESSION["steamid"])){
