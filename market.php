@@ -49,7 +49,7 @@ if (!logged_in()) {
 			?>
 		</section>
 		<aside>
-			<?php if ($show_submit) echo "<a type='submit' class='withdrawbutton'><span>CASHOUT</span><div class='icon'><i class='fa fa-shopping-cart'></i></div></a>"; echo "</form>"; ?>
+			<?php if ($show_submit) echo "<button type='submit' class='withdrawbutton'><span>CASHOUT</span><div class='icon'><i class='fa fa-shopping-cart'></i></div></button>"; echo "</form>"; ?>
 		</aside>
     </div>
   </body>
