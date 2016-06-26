@@ -49,6 +49,11 @@ function credits($steamid64, $db) {
 	return $query["credits"];
 	// return "&#8353;" . id_query("SELECT credits FROM users WHERE steamid64 = ?", $db, $steamid64)["credits"];
 }
+// returns boolean value true = admin false = normal user
+function admin($steamid64, $db) {
+	$query = id_query("SELECT admin FROM users WHERE steamid64 = ?", $db, $steamid64);
+	return $query["admin"] == 1;
+}
 /**
  * @param int $init
  * @param int $amt
