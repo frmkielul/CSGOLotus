@@ -13,6 +13,8 @@ require_once("config.php");
     <script src="js/phaser.min.js"></script>
     <script src = "games/paths/paths.js"></script>
   </head>
+  <style>
+  </style>
   <body>
     <div id="wrapper">
     <header>
@@ -40,6 +42,10 @@ require_once("config.php");
     </nav>
     <div id="game">
       <!-- HEY YOU FUCKING CANCERHOMO, THE GAME GOES HERE -->
+    </div>
+    <div id="belowgame">
+      <!-- player will input their bet here -->
+      <input type="text" id="bet" value="0">
     </div>
     </div>
   </body>
