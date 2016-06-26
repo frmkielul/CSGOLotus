@@ -30,8 +30,10 @@ require_once("config.php");
         <li><a href="#">Game</a></li>
         <li><a href="#">Game</a></li>
         <li><a href="market.php">Market</a></li>
-        <li style="float:right;"><a href="account.php">Account</a></li>
-        <li style="float:right;"><a href="deposit.php" style="background:#008E4E; font-weight: bold;">Deposit</a></li>
+        <?php if(isset($_SESSION["steamid"])){
+          echo '<li style="float:right;"><a href="account.php">Account</a></li>
+          <li style="float:right;"><a href="deposit.php" style="background:#008E4E; font-weight: bold;">Deposit</a></li>';
+        } ?>
       </ul>
     </nav>
     </div>
