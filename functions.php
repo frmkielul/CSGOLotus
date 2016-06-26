@@ -181,7 +181,7 @@ function draw_market() {
 		preg_match('#\((.*?)\)#', $name, $match);
 
 		echo "<tr>";
-		echo $lotus_value;
+		echo '<p>'.$lotus_value.'</p>';
 		echo "<img src=".$img_url." height='100'/>";
 		echo '<p>'.$match[1].'</p>';
 		echo "<a href=".$inspect_url.">Inspect in Game</a>";
