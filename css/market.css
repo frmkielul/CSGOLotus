@@ -93,7 +93,8 @@ aside{
 }
 .marketItem{
   position: relative;
-  width: 33%;
+  column-width: 33%;
+  display: inline-block;
 }
 .skinPrice{
   margin-top: 15px;
