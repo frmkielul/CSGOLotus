@@ -161,6 +161,7 @@ function draw_market() {
 	$descriptions = $json_obj['rgDescriptions'];
 	$inventory = $json_obj['rgInventory'];
 	echo "<table>";
+	echo '<col width="33%">';
 	foreach ($descriptions as $a) {
 		// skips any csgo cases
 		if ($a["commodity"] == 1) {
