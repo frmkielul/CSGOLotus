@@ -45,7 +45,7 @@ require_once("config.php");
     </div>
     <div id="belowgame">
       <!-- player will input their bet here -->
-      <input type="text" id="bet" value="0">
+      <input type="text" id="bet" onkeyup="waitForBet(this)" />
     </div>
     </div>
   </body>
