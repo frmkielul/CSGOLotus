@@ -1,5 +1,9 @@
 var WINDOW_HEIGHT = 600;
 var WINDOW_WIDTH = 350;
+var BUTTON_PADDING_TOP = 5;
+var BUTTON_PADDING_LEFT = 3;
+var BUTTON_PADDING_RIGHT = 3;
+var BUTTON_PADDING = 20;
 var game = new Phaser.Game(WINDOW_WIDTH, WINDOW_HEIGHT, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
 var session;
 var playButton;
@@ -13,7 +17,7 @@ class Button {
 }
 class ButtonPair {
   constructor(value, yPos) {
-    this.buttons = [new Button(value, 3, yPos), new Button(value, WINDOW_WIDTH-170,yPos)];
+    this.buttons = [new Button(value, BUTTON_PADDING_LEFT, yPos), new Button(value, WINDOW_WIDTH-(167+BUTTON_PADDING_RIGHT),yPos)];
     this.buttons[Math.round(Math.random())].correct = true;
   }
 }
@@ -31,10 +35,10 @@ class Session {
   buildGameBoard() {
     if (this.difficulty == 1) {
       // normal difficulty, 10x2 game board
-      var xPos = 5;
+      var xPos = BUTTON_PADDING_TOP;
       for (var i = 0; i < 10; i++) {
         this.buttons.push(new ButtonPair(0, xPos));
-        xPos += 36+20;
+        xPos += 36+BUTTON_PADDING;
       }
     }
   }
