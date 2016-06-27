@@ -8,11 +8,14 @@ var game = new Phaser.Game(WINDOW_WIDTH, WINDOW_HEIGHT, Phaser.AUTO, 'game', { p
 var session;
 var playButton;
 var bet = 0;
+var style;
 class Button {
   constructor(value, xPos, yPos) {
+    this.text = game.add.text(77, 12, value, style);
     this.value = value;
     this.correct = false;
     this.sprite = game.add.button(xPos, yPos, 'button');
+    this.sprite.addChild(this.text);
   }
 }
 class ButtonPair {
@@ -36,9 +39,11 @@ class Session {
     if (this.difficulty == 1) {
       // normal difficulty, 10x2 game board
       var xPos = BUTTON_PADDING_TOP;
+      var value = 500;
       for (var i = 0; i < 10; i++) {
-        this.buttons.push(new ButtonPair(0, xPos));
+        this.buttons.push(new ButtonPair(Math.round(value), xPos));
         xPos += 36+BUTTON_PADDING;
+        value/=1.5;
       }
     }
   }
@@ -64,6 +69,7 @@ function preload() {
 function create() {
   game.stage.backgroundColor = "#00638E";
   button = game.add.button(WINDOW_WIDTH-167, WINDOW_HEIGHT-36, 'playbutton', playButtonPressed, this);
+  style = { font: "12px Arial", fill: "#000", wordWrap: true, wordWrapWidth: null, align: "center" };
 }
 
 function update() {
