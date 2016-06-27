@@ -33,27 +33,30 @@ class Session {
     this.buttons = [];  // stores buttonpairs
     this.bet = bet;
     this.winnings = 0;  // increased every time a player gets to the next level
-    this.buildGameBoard();
   }
   buildGameBoard() {
     if (this.difficulty == 1) {
       // normal difficulty, 10x2 game board
       var xPos = BUTTON_PADDING_TOP;
-      var value = 500;
+      var value = bet * 1000;
       for (var i = 0; i < 10; i++) {
         this.buttons.push(new ButtonPair(Math.round(value), xPos));
         xPos += 36+BUTTON_PADDING;
-        value/=1.5;
+        value/=2;
       }
     }
   }
   start() {
     console.log(this.bet);
-    if (this.bet == 0) {
-      console.log("Bet must be > 0");
+    if (this.bet < 15) {
+      console.log("Bet must be at least 15");
+      document.getElementById("bet").placeholder = "Bet must be at least 15!";
+      document.getElementById("bet").value = "";
       return;
+    } else {
+      console.log("Session started");
+      this.buildGameBoard();
     }
-    console.log("Session started");
   }
   end() {
     // kill the game
