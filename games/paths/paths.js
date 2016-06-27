@@ -1,16 +1,19 @@
-var game = new Phaser.Game(350, 700, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
+var WINDOW_HEIGHT = 600;
+var WINDOW_WIDTH = 350;
+var game = new Phaser.Game(WINDOW_WIDTH, WINDOW_HEIGHT, Phaser.AUTO, 'game', { preload: preload, create: create, update: update });
 var session;
 var playButton;
 var bet = 0;
 class Button {
-  constructor(value) {
+  constructor(value, xPos, yPos) {
     this.value = value;
     this.correct = false;
+    this.sprite = game.add.button(xPos, yPos, 'button');
   }
 }
 class ButtonPair {
-  constructor(value) {
-    this.buttons = [new Button(), new Button()];
+  constructor(value, yPos) {
+    this.buttons = [new Button(value, 3, yPos), new Button(value, WINDOW_WIDTH-170,yPos)];
     this.buttons[Math.round(Math.random())].correct = true;
   }
 }
@@ -22,6 +25,18 @@ class Session {
     this.difficulty = difficulty;   // 0 = easy, 1 = normal, 2 = hard
     this.buttons = [];  // stores buttonpairs
     this.bet = bet;
+    this.winnings = 0;  // increased every time a player gets to the next level
+    this.buildGameBoard();
+  }
+  buildGameBoard() {
+    if (this.difficulty == 1) {
+      // normal difficulty, 10x2 game board
+      var xPos = 5;
+      for (var i = 0; i < 10; i++) {
+        this.buttons.push(new ButtonPair(0, xPos));
+        xPos += 36+20;
+      }
+    }
   }
   start() {
     console.log(this.bet);
@@ -38,17 +53,17 @@ class Session {
 
 function preload() {
   // load textures
-  game.load.image('button','games/paths/assets/playbutton.png');
+  game.load.image('playbutton','games/paths/assets/playbutton.png');
+  game.load.image('button', 'games/paths/assets/button.png');
 }
 
 function create() {
   game.stage.backgroundColor = "#00638E";
-  button = game.add.button(0, 0, 'button', playButtonPressed, this);
-
+  button = game.add.button(WINDOW_WIDTH-167, WINDOW_HEIGHT-36, 'playbutton', playButtonPressed, this);
 }
 
 function update() {
-  
+
 }
 function waitForBet(e) {
   bet = e.value;
