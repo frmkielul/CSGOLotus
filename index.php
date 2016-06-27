@@ -14,6 +14,14 @@ require_once("config.php");
     <script src = "games/paths/paths.js"></script>
   </head>
   <style>
+  .betbox {
+    color:#000;
+    height:36px;
+    width:167;
+    position:relative;
+    bottom:36px
+
+  }
   </style>
   <body>
     <div id="wrapper">
@@ -45,7 +53,7 @@ require_once("config.php");
     </div>
     <div id="belowgame">
       <!-- player will input their bet here -->
-      <input type="text" id="bet" onkeyup="waitForBet(this)" />
+      <input type="text" id="bet" value="0" onkeyup="waitForBet(this)" class="betbox"/>
     </div>
     </div>
   </body>
