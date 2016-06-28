@@ -11,7 +11,7 @@ var bet = 0;
 var style;
 class Button {
   constructor(value, xPos, yPos) {
-    this.text = game.add.text(77, 12, value, style);
+    this.text = game.add.text(77, 12, value, style);  // TODO: fix positioning of text when they are big numbers
     this.value = value;
     this.correct = false;
     this.sprite = game.add.button(xPos, yPos, 'button');
@@ -38,7 +38,7 @@ class Session {
     if (this.difficulty == 1) {
       // normal difficulty, 10x2 game board
       var xPos = BUTTON_PADDING_TOP;
-      var value = bet * 1000;
+      var value = bet * 500;
       for (var i = 0; i < 10; i++) {
         this.buttons.push(new ButtonPair(Math.round(value), xPos));
         xPos += 36+BUTTON_PADDING;
