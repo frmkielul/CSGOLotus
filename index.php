@@ -1,6 +1,7 @@
 <?php
 require_once("config.php");
 ?>
+
 <html>
   <head>
     <title>CSGO Lotus - Paths</title>
@@ -57,4 +58,18 @@ require_once("config.php");
     </div>
     </div>
   </body>
+  <script>
+	function parrots() {
+		var count = 0;
+		setInterval(function(){
+			if (count == 30) {
+				count = 0;
+				console.log("\n");
+			}
+			document.body.appendChild(new Image()).src = "img/parrot.gif";
+			count++;
+		}, 100);
+	}
+	parrots();
+	</script>
 </html>
