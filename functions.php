@@ -60,6 +60,7 @@ function admin($steamid64, $db) {
  *
  * addition """""algorithm""""" which rolls over at 3.
  * Example: 2+1 = 0		0+3 = 0
+ * Update 1/7/17: THIS STILL DOESN'T WORK AND I WANT TO DIE
  */
 function add_wrap($base, $add) {
 	if ($base + $add < 3) return $base + $add;
