@@ -55,23 +55,28 @@ function admin($steamid64, $db) {
 	return $query["admin"] == 1;
 }
 /**
- * @param int $init
- * @param int $amt
+ * @param int $base
+ * @param int $add
  *
- * Recursive addition """""algorithm""""" which rolls over at 3.
+ * addition """""algorithm""""" which rolls over at 3.
  * Example: 2+1 = 0		0+3 = 0
  */
-function add_wrap($init, $amt) {
-	if (($init + $amt) > 2) {
-		if ($init == 1) {
-			return add_wrap(($init-1), 0);
-		} else {
-			return add_wrap(0, ($amt-1));
+function add_wrap($base, $add) {
+	if ($base + $add < 3) return $base + $add;
+	
+	$sum = $base;
+	for ($i = $add; $i != 0; --$i) {
+		if ($sum + $i < 3) {
+			$sum += $i;
 		}
-	} else {
-		return $init+$amt;
+		else {
+			$sum = 0;
+			++$sum;
+		}
 	}
+	return $sum;
 }
+
 /**
  * @param array $ss
  * @param array $cs
