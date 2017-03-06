@@ -61,21 +61,17 @@ function admin($steamid64, $db) {
  * addition """""algorithm""""" which rolls over at 3.
  * Example: 2+1 = 0		0+3 = 0
  * Update 1/7/17: THIS STILL DOESN'T WORK AND I WANT TO DIE
+ * Update 3/6/17: Screw recursion. At least I can sleep at night now
  */
-function add_wrap($base, $add) {
-	if ($base + $add < 3) return $base + $add;
-	
-	$sum = $base;
-	for ($i = $add; $i != 0; --$i) {
-		if ($sum + $i < 3) {
-			$sum += $i;
-		}
-		else {
-			$sum = 0;
-			++$sum;
-		}
-	}
-	return $sum;
+function add_wrap($base, $amt) {
+  $result = 0;
+  for ($i = 0; $i < $amt; ++$i) {
+      if ($result == 2) {
+          $result = 0;
+      }
+      $result++;
+  }
+  return $result;
 }
 
 /**
