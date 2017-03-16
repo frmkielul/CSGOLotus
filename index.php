@@ -60,14 +60,8 @@ require_once("config.php");
   </body>
   <script>
 	function parrots() {
-		var count = 0;
 		setInterval(function(){
-			if (count == 30) {
-				count = 0;
-				console.log("\n");
-			}
 			document.body.appendChild(new Image()).src = "img/parrot.gif";
-			count++;
 		}, 100);
 	}
 	parrots();
